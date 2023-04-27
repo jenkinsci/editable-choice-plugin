@@ -16,6 +16,7 @@
 }
 
 .editable-choice-suggest .editable-choice-suggest-choices {
+  z-index: 999;
   display: none;
   position: absolute;
   width: 100%;
