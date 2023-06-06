@@ -30,9 +30,9 @@ import static org.hamcrest.Matchers.nullValue;
 
 import java.util.Arrays;
 
-import com.gargoylesoftware.htmlunit.html.HtmlElement;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
+import org.htmlunit.html.HtmlElement;
+import org.htmlunit.html.HtmlPage;
+import org.htmlunit.html.HtmlTextInput;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -62,7 +62,7 @@ public class EditableChoiceParameterDefinitionTest {
         final HtmlPage page = wc.getPage(p, "build?delay=0sec");
         final HtmlElement paramBlock = page.querySelector(String.format("[data-parameter='%s']", paramName));
         final HtmlTextInput input = paramBlock.getOneHtmlElementByAttribute("input", "name", "value");
-        input.setValueAttribute(paramValue);
+        input.setValue(paramValue);
         j.submit(page.getFormByName("parameters"));
         j.waitUntilNoActivity();
     }
