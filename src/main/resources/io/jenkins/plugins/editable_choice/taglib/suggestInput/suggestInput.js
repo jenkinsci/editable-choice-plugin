@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function() {
           self.stopSuggesting();
         },
-        100
+        500
       );
     });
     this.textbox.addEventListener('keydown', function(evt) {
