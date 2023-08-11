@@ -34,11 +34,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.gargoylesoftware.htmlunit.html.HtmlElement;
-import com.gargoylesoftware.htmlunit.html.HtmlFormUtil;
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.gargoylesoftware.htmlunit.html.HtmlTextInput;
-import com.gargoylesoftware.htmlunit.javascript.host.event.KeyboardEvent;
+import org.htmlunit.html.HtmlElement;
+import org.htmlunit.html.HtmlFormUtil;
+import org.htmlunit.html.HtmlPage;
+import org.htmlunit.html.HtmlTextInput;
+import org.htmlunit.javascript.host.event.KeyboardEvent;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -469,7 +469,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -481,7 +481,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
     }
@@ -504,7 +504,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -518,7 +518,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(equalTo("Grape"))
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -530,7 +530,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
     }
@@ -555,7 +555,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
     }
@@ -578,7 +578,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -590,7 +590,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
     }
@@ -613,7 +613,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -627,7 +627,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(equalTo("Grape"))
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -639,7 +639,7 @@ public class EditableChoiceParameterDefinitionUiTest {
             is(nullValue())
         );
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
     }
@@ -665,7 +665,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
     }
@@ -684,7 +684,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
 
@@ -692,7 +692,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
     }
@@ -712,7 +712,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
 
@@ -720,7 +720,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
 
@@ -749,7 +749,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
 
@@ -785,7 +785,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grap"))
         );
         assertThat(
@@ -797,7 +797,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
         assertThat(
@@ -828,7 +828,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
         assertThat(
@@ -840,7 +840,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapef"))
         );
         assertThat(
@@ -888,7 +888,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         final HtmlPage page = getBuildPage(p);
 
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Mango"))
         );
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -905,7 +905,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         final HtmlPage page = getBuildPage(p);
 
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Apple"))
         );
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -923,7 +923,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         final HtmlPage page = getBuildPage(p);
 
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Mango"))
         );
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -945,7 +945,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         // Run restriction check
         getSuggestInputTextbox(page, "PARAM1").fireEvent("change");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -967,7 +967,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         // Run restriction check
         getSuggestInputTextbox(page, "PARAM1").fireEvent("change");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapefruit"))
         );
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -991,7 +991,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grape"))
         );
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -1020,7 +1020,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         assertNotHasClass(getSuggestInputContainer(page, "PARAM1"), "suggesting");
         assertNotDisplays(getSuggestInputChoicesBlock(page, "PARAM1"));
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("Grapef"))
         );
         assertHasClass(getSuggestInputContainer(page, "PARAM1"), "restriction-error");
@@ -1052,7 +1052,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1088,7 +1088,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1125,7 +1125,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").type("App");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1162,11 +1162,11 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").setSelectionStart(0);
         getSuggestInputTextbox(page, "PARAM1").setSelectionEnd(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute().length()
+            getSuggestInputTextbox(page, "PARAM1").getValue().length()
         );
         getSuggestInputTextbox(page, "PARAM1").type(KeyboardEvent.DOM_VK_DELETE);
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1206,7 +1206,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1243,7 +1243,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1284,7 +1284,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").type("App");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1322,11 +1322,11 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").setSelectionStart(0);
         getSuggestInputTextbox(page, "PARAM1").setSelectionEnd(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute().length()
+            getSuggestInputTextbox(page, "PARAM1").getValue().length()
         );
         getSuggestInputTextbox(page, "PARAM1").type(KeyboardEvent.DOM_VK_DELETE);
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1366,7 +1366,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1405,7 +1405,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1446,7 +1446,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").type("App");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1486,11 +1486,11 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").setSelectionStart(0);
         getSuggestInputTextbox(page, "PARAM1").setSelectionEnd(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute().length()
+            getSuggestInputTextbox(page, "PARAM1").getValue().length()
         );
         getSuggestInputTextbox(page, "PARAM1").type(KeyboardEvent.DOM_VK_DELETE);
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1530,7 +1530,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1566,7 +1566,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1607,7 +1607,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").type("App");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1644,11 +1644,11 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").setSelectionStart(0);
         getSuggestInputTextbox(page, "PARAM1").setSelectionEnd(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute().length()
+            getSuggestInputTextbox(page, "PARAM1").getValue().length()
         );
         getSuggestInputTextbox(page, "PARAM1").type(KeyboardEvent.DOM_VK_DELETE);
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1688,7 +1688,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1725,7 +1725,7 @@ public class EditableChoiceParameterDefinitionUiTest {
 
         getSuggestInputTextbox(page, "PARAM1").focus();
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
@@ -1766,7 +1766,7 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").type("App");
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo("App"))
         );
         assertThat(
@@ -1804,11 +1804,11 @@ public class EditableChoiceParameterDefinitionUiTest {
         getSuggestInputTextbox(page, "PARAM1").focus();
         getSuggestInputTextbox(page, "PARAM1").setSelectionStart(0);
         getSuggestInputTextbox(page, "PARAM1").setSelectionEnd(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute().length()
+            getSuggestInputTextbox(page, "PARAM1").getValue().length()
         );
         getSuggestInputTextbox(page, "PARAM1").type(KeyboardEvent.DOM_VK_DELETE);
         assertThat(
-            getSuggestInputTextbox(page, "PARAM1").getValueAttribute(),
+            getSuggestInputTextbox(page, "PARAM1").getValue(),
             is(equalTo(""))
         );
         assertThat(
