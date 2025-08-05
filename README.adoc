@@ -48,7 +48,7 @@ Full pipeline example:
 ```
 editableChoice(
   name: 'PARAM1',
-  description: 'Choose your favorite fruit`
+  description: 'Choose your favorite fruit',
   choices: ['Apple', 'Grape', 'Orange'],
   defaultValue: 'Grape',
   restrict: true,
